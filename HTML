@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enviar mensagem para o Discord</title>
+	<style>
+		body {
+			background-color: #F0F0F0;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			margin: 0;
+			padding: 0;
+		}
+		form {
+			background-color: #FFFFFF;
+			border: 1px solid #CCCCCC;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			margin: 20px auto;
+			padding: 20px;
+			max-width: 500px;
+		}
+		label {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		textarea {
+			border: 1px solid #CCCCCC;
+			border-radius: 3px;
+			box-sizing: border-box;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			height: 100px;
+			padding: 5px;
+			resize: vertical;
+			width: 100%;
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			border: none;
+			border-radius: 3px;
+			color: #FFFFFF;
+			cursor: pointer;
+			font-size: 14px;
+			margin-top: 10px;
+			padding: 10px;
+			width: 100%;
+		}
+		input[type="submit"]:hover {
+			background-color: #3E8E41;
+		}
+		#botoes {
+			margin-top: 20px;
+			text-align: center;
+		}
+		.botao {
+			background-color: #FFFFFF;
+			border: 1px solid #CCCCCC;
+			border-radius: 3px;
+			color: #000000;
+			cursor: pointer;
+			font-size: 14px;
+			margin: 5px;
+			padding: 5px 10px;
+		}
+		.botao:hover {
+			background-color: #EEEEEE;
+		}
+	</style>
+</head>
+<body>
+	<form method="post" action="https://discord.com/api/webhooks/1086498447768703096/U3nC_0YEcPbsdYwhdMgtEdY6e-fA_eS2tzbydL9cww5E7ZGnRXQQQnSMHG_tmWFT27y0">
+		<label for="mensagem">Mensagem:</label><br>
+		<textarea id="mensagem" name="content" rows="4" cols="50"></textarea><br>
+		<input type="submit" value="Enviar">
+		<div id="botoes">
+			<button class="botao" type="button" style="background-color: rgba(0, 255, 0, 0.219)" onclick="adicionarMensagem('@Funcionários')">Funcionários</button>
+			<button class="botao" type="button" style="background-color: rgba(0, 0, 255, 0.329)" onclick="adicionarMensagem('@Supervisor')">Supervisor</button>
+			<button class="botao" type="button" style="background-color: rgba(255, 255, 0, 0.404)"onclick="adicionarMensagem('@Gerente')">Gerente</button>
+			<button class="botao" type="button" style="background-color: rgba(255, 0, 0, 0.342)" onclick="adicionarMensagem('@Proprietários')">Proprietários</button>
+		</div>
+	</form>
+	<script>
+		function adicionarMensagem(mensagem) {
+			document.getElementById('mensagem').value += mensagem;
+		}
+	</script>
+</
